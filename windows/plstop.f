@@ -3,7 +3,7 @@
 
 !      * * F E A P * * A Finite Element Analysis Program
 
-!....  Copyright (c) 1984-2020: Regents of the University of California
+!....  Copyright (c) 1984-2021: Regents of the University of California
 !                               All rights reserved
 
 !-----[--.----+----.----+----.-----------------------------------------]
@@ -28,7 +28,7 @@
       include  'plflag.h'
 
       logical       :: eflag
-      integer       :: vstatus,vclrwk,vclswk
+      integer       :: p_status,vclrwk,vclswk
 
       save
 
@@ -44,8 +44,8 @@
       if (hdcpy) call fpplcl()
 
       if(everon) then
-        vstatus = vclrwk()
-        vstatus = vclswk()
+        p_status = vclrwk()
+        p_status = vclswk()
       endif
 
 !     Clear last time history plot
@@ -58,8 +58,8 @@
 
 !     Close last input & output file
 
-      close(unit=ior, vstatus = 'keep')
-      close(unit=iow, vstatus = 'keep')
+      close(unit=ior, status = 'keep')
+      close(unit=iow, status = 'keep')
 
       vstatus = setexitqq(QWIN$EXITNOPERSIST)
 

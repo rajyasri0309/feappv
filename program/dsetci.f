@@ -3,7 +3,7 @@
 
 !      * * F E A P * * A Finite Element Analysis Program
 
-!....  Copyright (c) 1984-2020: Regents of the University of California
+!....  Copyright (c) 1984-2021: Regents of the University of California
 !                               All rights reserved
 
 !-----[--.----+----.----+----.-----------------------------------------]
@@ -146,6 +146,18 @@
           gtan(3) = 1.d0
 
         endif
+
+!     Backward Euler Algorithm
+      elseif(noi.eq.4) then
+        c1  = 1.d0/dt
+        cc1 = 1.0d0
+        cc2 = 1.0d0
+        cc3 = 1.0d0
+
+!       Set update parameters for element
+        gtan(1) = 1.d0
+        gtan(2) = c1
+        gtan(3) = c1
 
       elseif(noi.eq.-1) then
 
