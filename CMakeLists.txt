@@ -18,15 +18,21 @@ include_directories(include/)
 add_subdirectory(elements/)
 add_subdirectory(program/)
 add_subdirectory(user/)
-add_subdirectory(unix/)
 add_subdirectory(plot/)
 # add_subdirectory(iga/)
+
+if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+  add_subdirectory(windows/)
+else()
+  add_subdirectory(unix/)
+endif()
+
 
 
 add_executable(feappv main/feappv.f)
 install(TARGETS feappv DESTINATION ${CMAKE_INSTALL_PREFIX})
 
-target_link_libraries(feappv 
+target_link_libraries(feappv
   PRIVATE
     FEAP_Program
     FEAP_Elements
