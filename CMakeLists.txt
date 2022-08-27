@@ -37,7 +37,7 @@ target_link_libraries(feappv
     FEAP_Program
     FEAP_Elements
     FEAP_Plot
-    FEAP_Unix
+    FEAP_OperatingSystem
     FEAP_User
 )
 

@@ -1,8 +1,8 @@
-add_library(FEAP_Unix OBJECT)
+add_library(FEAP_OperatingSystem OBJECT)
 
 find_package(X11 REQUIRED)
 
-target_sources(FEAP_Unix
+target_sources(FEAP_OperatingSystem
     PRIVATE
         clpan.f
         dplot.f
@@ -30,4 +30,4 @@ target_sources(FEAP_Unix
     PUBLIC
 )
 
-target_link_libraries(FEAP_Unix PRIVATE ${X11_LIBRARIES})
+target_link_libraries(FEAP_OperatingSystem PRIVATE ${X11_LIBRARIES})

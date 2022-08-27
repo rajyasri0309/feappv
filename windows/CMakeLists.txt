@@ -1,6 +1,6 @@
-add_library(FEAP_Windows OBJECT)
+add_library(FEAP_OperatingSystem OBJECT)
 
-target_sources(FEAP_Windows
+target_sources(FEAP_OperatingSystem
     PRIVATE
         cinput.f
         clpan.f
