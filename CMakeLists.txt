@@ -1,0 +1,37 @@
+# ==================================================================
+#   F I N I T E   E L E M E N T   A N A L Y S I S   P R O G R A M
+#             FEAPpv (P e r s o n a l   V e r s i o n)
+#
+#          FEAPpv(C) Regents of the University of California
+#                        All Rights Reserved.
+# ==================================================================
+# Claudio Perez
+cmake_minimum_required(VERSION 3.16)
+
+project(FEAPPV VERSION 0.0.0
+  LANGUAGES Fortran C
+  DESCRIPTION "FEAPpv -- free personal version of the FEAP (A Finite Element Analysis Program)"
+)
+
+include_directories(include/)
+
+add_subdirectory(elements/)
+add_subdirectory(program/)
+add_subdirectory(user/)
+add_subdirectory(unix/)
+add_subdirectory(plot/)
+# add_subdirectory(iga/)
+
+
+add_executable(feappv main/feappv.f)
+install(TARGETS feappv DESTINATION ${CMAKE_INSTALL_PREFIX})
+
+target_link_libraries(feappv 
+  PRIVATE
+    FEAP_Program
+    FEAP_Elements
+    FEAP_Plot
+    FEAP_Unix
+    FEAP_User
+)
+

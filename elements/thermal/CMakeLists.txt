@@ -1,0 +1,15 @@
+
+target_sources(FEAP_Elements
+    PRIVATE
+        convec2d.f
+        convec3d.f
+        modltd.f
+        therm2d.f
+        therm3d.f
+        thfx2d.f
+        tlcn2d.f
+        tlcn3d.f
+        trvemat.f
+    PUBLIC
+)
+
