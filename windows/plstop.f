@@ -3,7 +3,7 @@
 
 !      * * F E A P * * A Finite Element Analysis Program
 
-!....  Copyright (c) 1984-2021: Regents of the University of California
+!....  Copyright (c) 1984-2024: Regents of the University of California
 !                               All rights reserved
 
 !-----[--.----+----.----+----.-----------------------------------------]
@@ -61,7 +61,7 @@
       close(unit=ior, status = 'keep')
       close(unit=iow, status = 'keep')
 
-      vstatus = setexitqq(QWIN$EXITNOPERSIST)
+      p_status = setexitqq(QWIN$EXITNOPERSIST)
 
       stop
 
