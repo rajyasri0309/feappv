@@ -22,6 +22,5 @@ target_sources(FEAP_Elements
         solid2d.f
         strn2d.f
         strn2m.f
-    PUBLIC
 )
 

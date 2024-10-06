@@ -25,6 +25,5 @@ target_sources(FEAP_IGA
         shp2d_shl.f
         shp3d_bez.f
         shp3d_nurb.f
-    PUBLIC
 )
 

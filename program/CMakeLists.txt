@@ -299,6 +299,5 @@ target_sources(FEAP_Program
         vinput.f
         wprojm.f
         writer.f
-    PUBLIC
 )
 

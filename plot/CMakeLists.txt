@@ -78,6 +78,5 @@ target_sources(FEAP_Plot
         xcompp.f
         xpline.f
         zoom.f
-    PUBLIC
 )
 

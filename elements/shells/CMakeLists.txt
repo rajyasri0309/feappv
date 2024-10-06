@@ -5,6 +5,5 @@ target_sources(FEAP_Elements
         plate2d.f
         shell2d.f
         shell3d.f
-    PUBLIC
 )
 

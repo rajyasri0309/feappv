@@ -17,6 +17,5 @@ target_sources(FEAP_IGA
         ExtractCurve.f
         findspan.f
         fspan.f
-    PUBLIC
 )
 

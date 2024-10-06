@@ -4,6 +4,5 @@ target_sources(FEAP_Elements
         material.f
         rvemat.f
         srvemat.f
-    PUBLIC
 )
 

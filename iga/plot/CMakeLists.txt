@@ -15,6 +15,5 @@ target_sources(FEAP_IGA
         psetbez.f
         pstr_lin.f
         uplot3.f
-    PUBLIC
 )
 

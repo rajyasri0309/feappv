@@ -97,6 +97,5 @@ target_sources(FEAP_User
         uprob.f
         usetci.f
         usolve.f
-    PUBLIC
 )
 

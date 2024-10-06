@@ -10,6 +10,5 @@ target_sources(FEAP_Elements
         tlcn2d.f
         tlcn3d.f
         trvemat.f
-    PUBLIC
 )
 

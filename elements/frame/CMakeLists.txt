@@ -5,6 +5,5 @@ target_sources(FEAP_Elements
         frame3d.f
         pointnd.f
         trussnd.f
-    PUBLIC
 )
 

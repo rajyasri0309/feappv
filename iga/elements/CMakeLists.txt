@@ -6,6 +6,5 @@ target_sources(FEAP_IGA
         sld2d2n.f
         solid2d.f
         strn2n.f
-    PUBLIC
 )
 

@@ -19,6 +19,4 @@ target_sources(FEAP_IGA
         psetPw.f
         psetQw.f
         psetUw_ks.f
-    PUBLIC
 )
-

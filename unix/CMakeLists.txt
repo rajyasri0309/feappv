@@ -27,7 +27,6 @@ target_sources(FEAP_OperatingSystem
         pstart.f
         tplot.f
         x11u.c
-    PUBLIC
 )
 
 target_link_libraries(FEAP_OperatingSystem PRIVATE ${X11_LIBRARIES})

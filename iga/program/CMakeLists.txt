@@ -41,6 +41,5 @@ target_sources(FEAP_IGA
         ppart.f
         ptinvert.f
         setnelm.f
-    PUBLIC
 )
 

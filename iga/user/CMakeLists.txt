@@ -15,6 +15,4 @@ target_sources(FEAP_IGA
         umesh1.f
         unurbdi2d.f
         unurbld2d.f
-    PUBLIC
 )
-

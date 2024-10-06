@@ -15,6 +15,5 @@ target_sources(FEAP_Elements
         sld3d1.f
         solid3d.f
         strn3d.f
-    PUBLIC
 )
 
