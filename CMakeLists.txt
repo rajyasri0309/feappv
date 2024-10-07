@@ -19,30 +19,12 @@ add_compile_options(
   -ggdb
   -Og
   -g
-  # to "enable all the warnings about constructions that some users consider
-  # questionable, and that are easy to avoid (or modify to prevent the
-  # warning), even in conjunction with macros."
-  -Wall 
-
-  # to "enable some extra warning flags that are not enabled by -Wall."
-  -Wextra 
-
-  # to generate warnings about language features that are supported by gfortran
-  # but are not part of the official Fortran 95 standard. It possible to be
-  # even more "pedantic" and use -std=f95 flag for warnings to become errors.
-  #-pedantic 
-  
-  # to "specify that no implicit typing is allowed, unless overridden by
-  # explicit IMPLICIT statements. This is the equivalent of adding implicit
-  # none to the start of every procedure."
-  #-fimplicit-none 
-  
-  # to "enable run-time tests", such as, for instance, array bounds checks.
-# -fcheck=all 
-  
-  # when a runtime error is encountered or a deadly signal is emitted
-  # (segmentation fault, illegal instruction, bus error or floating-point
-  # exception), the Fortran runtime library should output a backtrace of the error."
+  -Wall             # enable a large number of warnings
+  -Wextra           # enable additional warnings (good practice)
+# -pedantic   
+# -fimplicit-none   # turn off default implicit typing
+ 
+# -fcheck=all  
   -fbacktrace
 ) 
 
