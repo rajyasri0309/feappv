@@ -1,6 +1,7 @@
 add_library(FEAP_Plot OBJECT)
 target_sources(FEAP_Plot
     PRIVATE
+        dtot_pl.f
         fpplcl.f
         fpplps.f
         fppsdu.f
