@@ -16,7 +16,7 @@ target_sources(FEAP_OperatingSystem
         plstop.f
         plstrt.f
         pltcur.f
-        pltdos.f
+#       pltdos.f
         pltefl.f
         pltelm.f
         pltext.f
