@@ -1,4 +1,12 @@
+find_package(MPI)
+
+if (NOT MPI_FOUND)
+  return()
+endif()
+
 add_library(FEAP_fe2)
+target_link_libraries(fe2 PRIVATE MPI::MPI_Fortran)
+
 
 target_sources(FEAP_fe2
     PRIVATE

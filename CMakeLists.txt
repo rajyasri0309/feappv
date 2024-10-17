@@ -34,6 +34,7 @@ add_subdirectory(elements)
 add_subdirectory(program)
 add_subdirectory(user)
 add_subdirectory(plot)
+add_subdirectory(fe2)
 # add_subdirectory(iga)
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
