@@ -15,18 +15,21 @@ project(FEAPPV
   "FEAPpv -- free personal version of the FEAP (A Finite Element Analysis Program)"
 )
 
-add_compile_options(
-  -ggdb
-  -Og
-  -g
-  -Wall             # enable a large number of warnings
-  -Wextra           # enable additional warnings (good practice)
-# -pedantic   
-# -fimplicit-none   # turn off default implicit typing
- 
-# -fcheck=all  
-  -fbacktrace
-) 
+
+if ("${CMAKE_Fortran_COMPILER_ID}" MATCHES "GNU")
+   add_compile_options(
+     -ggdb
+     -Og
+     -g
+     -Wall             # enable a large number of warnings
+     -Wextra           # enable additional warnings (good practice)
+   # -pedantic   
+   # -fimplicit-none   # turn off default implicit typing
+    
+   # -fcheck=all  
+     -fbacktrace
+   )
+endif()
 
 include_directories(include)
 
@@ -37,15 +40,20 @@ add_subdirectory(plot)
 add_subdirectory(fe2)
 # add_subdirectory(iga)
 
+add_executable(feappv main/feappv.f)
+
 if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
   add_subdirectory(windows)
+# target_link_libraries(FEAP_Plot PUBLIC /libs:qwins)
+# target_link_libraries(FEAP_OperatingSystem PUBLIC /libs:qwins)
+  target_link_options(feappv    PUBLIC /libs:qwin)
+  target_compile_options(feappv    PUBLIC /libs:qwin)
 else()
   add_subdirectory(unix)
 endif()
 
 
 
-add_executable(feappv main/feappv.f)
 install(TARGETS feappv DESTINATION ${CMAKE_INSTALL_PREFIX})
 
 #
