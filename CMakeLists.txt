@@ -15,32 +15,35 @@ project(FEAPPV
   "FEAPpv -- free personal version of the FEAP (A Finite Element Analysis Program)"
 )
 
+add_executable(feappv main/feappv.f)
 
 if ("${CMAKE_Fortran_COMPILER_ID}" MATCHES "GNU")
-   add_compile_options(
+  # Add compiler options that are specifig to gfortran
+
+  target_compile_options(feappv PUBLIC
      -ggdb
      -Og
      -g
      -Wall             # enable a large number of warnings
      -Wextra           # enable additional warnings (good practice)
    # -pedantic   
-   # -fimplicit-none   # turn off default implicit typing
-    
-   # -fcheck=all  
+   # -fimplicit-none   # turn off default implicit typing  
      -fbacktrace
    )
+
 endif()
 
+# Declare directory for include statements
 include_directories(include)
 
+# Run configuration for subdirectories
 add_subdirectory(elements)
 add_subdirectory(program)
 add_subdirectory(user)
 add_subdirectory(plot)
 add_subdirectory(fe2)
+# add_subdirectory(fluids)
 # add_subdirectory(iga)
-
-add_executable(feappv main/feappv.f)
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
   add_subdirectory(windows)
