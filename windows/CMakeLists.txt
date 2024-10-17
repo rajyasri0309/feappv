@@ -1,6 +1,5 @@
 add_library(FEAP_OperatingSystem OBJECT)
 
-target_compile_options(FEAP_OperatingSystem /libs:qwin)
 
 target_sources(FEAP_OperatingSystem
     PRIVATE
