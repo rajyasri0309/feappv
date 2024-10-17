@@ -5,7 +5,8 @@ if (NOT MPI_FOUND)
 endif()
 
 add_library(FEAP_fe2)
-target_link_libraries(fe2 PRIVATE MPI::MPI_Fortran)
+target_link_libraries(FEAP_fe2 PRIVATE MPI::MPI_Fortran)
+target_link_libraries(feappv PRIVATE FEAP_fe2)
 
 
 target_sources(FEAP_fe2
