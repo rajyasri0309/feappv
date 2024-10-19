@@ -7,6 +7,8 @@ add_library(FEAP_OperatingSystem OBJECT)
 
 find_package(X11 REQUIRED)
 
+target_include_directories(FEAP_OperatingSystem PRIVATE ${X11_INCLUDE_DIR})
+
 target_sources(FEAP_OperatingSystem
     PRIVATE
         clpan.f
