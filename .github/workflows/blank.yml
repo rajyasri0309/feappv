@@ -25,13 +25,11 @@ jobs:
 
     - name: Install dependencies
       run: |
-        sudo apt-get install gfortran
+        sudo apt-get install gfortran libopenblas-dev libopenmpi-dev
         echo Finish GFORTRAN install
 
-    - name: Compile
+    - name: Configure and Compile
       run: |
-        export FEAPPVHOME5_1=`pwd`
-        echo set envrionment variable
-        echo $FEAPPVHOME5_1
-        make install
-
+        mkdir build
+        cmake -S . -B build
+        cmake --build build -j 8
