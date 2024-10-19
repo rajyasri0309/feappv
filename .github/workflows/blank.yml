@@ -84,6 +84,8 @@ jobs:
           WINDOWS_HPCKIT_COMPONENTS: "intel.oneapi.win.mpi.devel:intel.oneapi.win.ifort-compiler"
 #       working-directory: D:\a\OpenSees\OpenSees\.github\workflows
         run: |
+          cd .github
+          cd workflows
           ./install_fortran.bat $env:WINDOWS_BASEKIT_URL $env:WINDOWS_BASEKIT_COMPONENTS
           ./install_fortran.bat $env:WINDOWS_HPCKIT_URL $env:WINDOWS_HPCKIT_COMPONENTS
 
