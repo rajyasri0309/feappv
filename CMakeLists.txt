@@ -47,10 +47,16 @@ add_subdirectory(fe2)
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
   add_subdirectory(windows)
-# target_link_libraries(FEAP_Plot PUBLIC /libs:qwins)
-# target_link_libraries(FEAP_OperatingSystem PUBLIC /libs:qwins)
-  target_link_options(feappv    PUBLIC /libs:qwin)
-  target_compile_options(feappv    PUBLIC /libs:qwin)
+  set_target_properties(feappv PROPERTIES WIN32_EXECUTABLE TRUE)
+  target_compile_options(feappv PUBLIC /iface:cvf /libs:qwin /c)
+  target_link_options(feappv PRIVATE
+    /NODEFAULTLIB:"ifconsol.lib" 
+    /MANIFEST:NO 
+    /INCREMENTAL:NO 
+    /SUBSYSTEM:WINDOWS 
+    /ENTRY:"WinMainCRTStartup" 
+  )
+  target_link_libraries(feappv PRIVATE libifcoremt.lib) # libmmt.lib)
 else()
   add_subdirectory(unix)
 endif()
