@@ -1,0 +1,37 @@
+name: CI
+
+
+# Trigger in two scenarios:
+# 1) when pushing directly into master, and
+# 2) when pull requests are opened on devel
+on:
+  push:
+    branches: [master]
+
+  pull_request:
+    branches: [devel]
+
+  workflow_dispatch:
+
+
+jobs:
+  build-linux:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout source code
+      uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get install gfortran
+        echo Finish GFORTRAN install
+
+    - name: Compile
+      run: |
+        export FEAPPVHOME5_1=`pwd`
+        echo set envrionment variable
+        echo $FEAPPVHOME5_1
+        make install
+
