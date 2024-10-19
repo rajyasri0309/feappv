@@ -54,6 +54,7 @@ jobs:
          ln -s /opt/homebrew/bin/gfortran-13 /usr/local/bin/gfortran
          brew install open-mpi
          brew install scalapack
+         brew install xquartz
 
       - name: Configure and Compile
         run: |
