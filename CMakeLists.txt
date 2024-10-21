@@ -63,7 +63,6 @@ else()
 endif()
 
 
-
 install(TARGETS feappv DESTINATION ${CMAKE_INSTALL_PREFIX})
 
 #
@@ -72,8 +71,6 @@ find_package(LAPACK REQUIRED)
 
 target_link_libraries(feappv
   PRIVATE
-#   FEAP_Program
-    FEAP_Plot
     FEAP_OperatingSystem
     FEAP_User
     LAPACK::LAPACK
