@@ -18,8 +18,7 @@ project(FEAPPV
 add_executable(feappv main/feappv.f)
 
 if ("${CMAKE_Fortran_COMPILER_ID}" MATCHES "GNU")
-  # Add compiler options that are specifig to gfortran
-
+  # Add compiler options that are specific to gfortran
   target_compile_options(feappv PUBLIC
      -ggdb
      -Og
