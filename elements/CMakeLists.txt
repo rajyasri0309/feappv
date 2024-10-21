@@ -13,3 +13,5 @@ add_subdirectory(solid2d)
 add_subdirectory(solid3d)
 add_subdirectory(thermal)
 
+target_link_libraries(feappv PRIVATE FEAP_Elements)
+

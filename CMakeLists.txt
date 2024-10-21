@@ -15,6 +15,7 @@ project(FEAPPV
   "FEAPpv -- free personal version of the FEAP (A Finite Element Analysis Program)"
 )
 
+# Define the feappv executable
 add_executable(feappv main/feappv.f)
 
 if ("${CMAKE_Fortran_COMPILER_ID}" MATCHES "GNU")
@@ -47,6 +48,7 @@ add_subdirectory(fe2)
 if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
   add_subdirectory(windows)
   set_target_properties(feappv PROPERTIES WIN32_EXECUTABLE TRUE)
+  # Add options for QuickWin framework
   target_compile_options(feappv PUBLIC /iface:cvf /libs:qwin /c)
   target_link_options(feappv PRIVATE
     /NODEFAULTLIB:"ifconsol.lib" 
@@ -55,7 +57,7 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
     /SUBSYSTEM:WINDOWS 
     /ENTRY:"WinMainCRTStartup" 
   )
-  target_link_libraries(feappv PRIVATE libifcoremt.lib) # libmmt.lib)
+  target_link_libraries(feappv PRIVATE libifcoremt.lib)
 else()
   add_subdirectory(unix)
 endif()
@@ -70,8 +72,7 @@ find_package(LAPACK REQUIRED)
 
 target_link_libraries(feappv
   PRIVATE
-    FEAP_Program
-    FEAP_Elements
+#   FEAP_Program
     FEAP_Plot
     FEAP_OperatingSystem
     FEAP_User
