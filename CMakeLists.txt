@@ -17,9 +17,9 @@ project(FEAPPV
 
 # Define the feappv executable
 add_executable(feappv    main/feappv.f)
-add_executable(fe2feappv main/feappv.f)
-add_executable(vemfeappv main/feappv.f)
-add_executable(igafeappv main/feappv.f)
+add_executable(fe2feappv main/feappv.f EXCLUDE_FROM_ALL)
+add_executable(vemfeappv main/feappv.f EXCLUDE_FROM_ALL)
+add_executable(igafeappv main/feappv.f EXCLUDE_FROM_ALL)
 
 if ("${CMAKE_Fortran_COMPILER_ID}" MATCHES "GNU")
   # Add compiler options that are specific to gfortran
